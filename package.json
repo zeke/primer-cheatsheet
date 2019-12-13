@@ -1,0 +1,19 @@
+{
+  "name": "primer-cheatsheet",
+  "version": "1.0.0",
+  "description": "A single-page reference for all the utility classes in @primer/css",
+  "main": "index.js",
+  "repository": "https://github.com/zeke/primer-cheatsheet",
+  "author": "zeke",
+  "license": "MIT",
+  "devDependencies": {
+    "@github-docs/render-content": "^1.0.1",
+    "@primer/css": "^14.0.0",
+    "css": "^2.2.4",
+    "standard": "^14.3.1"
+  },
+  "scripts": {
+    "build": "script/build.js",
+    "lint": "standard --fix"
+  }
+}
