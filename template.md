@@ -17,8 +17,8 @@
 
   {% for class in classes %}
   <div class="container-lg clearfix border-top">
-    <div class="col-5 float-left border-right p-4">
-      <a href="#{{class.slug}}" id="{{class.slug}}"><code>{{class.selectors}}</code></a>
+    <div class="col-5 float-left border-right p-4" id="{{class.slug}}">
+      <a href="#{{class.slug}}"><code>{{class.selectors}}</code></a>
     </div>
     <div class="col-7 float-left">
       <pre><code>{{class.definition}}</code></pre>
