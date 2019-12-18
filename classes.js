@@ -1,6 +1,7 @@
 const fs = require('fs')
 const path = require('path')
 const css = require('css')
+const { paramCase } = require('change-case')
 const cssPath = path.join(__dirname, 'node_modules/@primer/css/dist/primer.css')
 const raw = fs.readFileSync(cssPath, 'utf8')
 const tree = css.parse(raw)
@@ -8,7 +9,7 @@ const rules = tree.stylesheet.rules.filter(rule => rule.type === 'rule')
 const classes = rules
   .filter(rule => rule.selectors[0].startsWith('.'))
   .map(rule => {
-    return { ...rule, definition: stringify(rule.declarations) }
+    return { ...rule, definition: stringify(rule.declarations), slug: paramCase(rule.selectors[0]) }
   })
   .sort((a, b) => a.selectors[0].localeCompare(b.selectors[0]))
 
